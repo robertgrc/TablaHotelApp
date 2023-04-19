@@ -5,38 +5,42 @@ import './TablaReservas.css';
 
 function TablaCalendarioReservas() {
   const habitaciones = [
-    { id: 1, nombre: '01 SWB' },
-    { id: 2, nombre: '02 TWB' },
-    { id: 3, nombre: '03 DWB' },
-    { id: 4, nombre: '04 SWB' },
-    { id: 5, nombre: '05 TWB' },
-    { id: 6, nombre: '06 SWB' },
-    { id: 7, nombre: '07 TWB' },
+      { id: 1, nombre: '01 SWB', numero: '101' },
+      { id: 2, nombre: '02 TWB', numero: '102' },
+      { id: 3, nombre: '03 DWB', numero: '103' },
+      { id: 4, nombre: '04 SWB', numero: '104' },
+      { id: 5, nombre: '05 TWB', numero: '105' },
+      { id: 6, nombre: '06 SWB', numero: '106' },
+      { id: 7, nombre: '07 TWB', numero: '107' },
   ];
 
   const reservas = [
     {
-      id: 1,
-      habitacion: '101',
-      nombre: '01 SWB',
-      fechaInicio: '2022-04-05',
-      fechaFin: '2022-04-07',
-      estado: 'confirmado'
+      id: 4,                  
+      habitacion: '101',      
+      nombre: 'Juan Pérez',   
+      fechaReserva: '2023-04-20',  
+      fechaInicio: '2023-04-25',  
+      fechaFin: '2023-04-27',      
+      estado: 'alquilado'     
+      // estado de la reserva, puede ser 'alquilado', 'confirmado', 'provisional' o 'cancelado'
     },
     {
       id: 2,
       habitacion: '102',
-      nombre: '02 TWB',
-      fechaInicio: '2022-04-08',
-      fechaFin: '2022-04-10',
+      nombre: 'julio',
+      fechaReserva: '2023-04-20', 
+      fechaInicio: '2022-04-26',
+      fechaFin: '2022-04-28',
       estado: 'provisional'
     },
     {
       id: 3,
       habitacion: '103',
       nombre: '03 DWB',
-      fechaInicio: '2022-04-15',
-      fechaFin: '2022-04-18',
+      fechaReserva: '2023-04-20', 
+      fechaInicio: '2022-04-22',
+      fechaFin: '2022-04-23',
       estado: 'cancelado'
     }
   ];

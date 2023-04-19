@@ -20,10 +20,8 @@ function TablaReservas({ habitaciones, diasDelMes, mesActualNumerico, yearActual
             <td>{habitacion.nombre}</td>
             {[...Array(diasDelMes)].map((_, i) => {
               const fecha = new Date(yearActual, mesActualNumerico - 1, i + 1);
-              const reservasHabitacion = reservas.filter(reserva => reserva.habitacion === habitacion.id);
-              const reservaDia = reservasHabitacion.find(reserva => 
-                fecha >= new Date(reserva.fechaInicio) && fecha <= new Date(reserva.fechaFin)
-              );
+              const reservasHabitacion = reservas.filter(reserva => reserva.habitacion === habitacion.numero);
+              const reservaDia = reservasHabitacion.find(reserva => fecha.getTime() >= new Date(reserva.fechaInicio).getTime() && fecha.getTime() <= new Date(reserva.fechaFin).getTime());
               let color = 'white';
               if (reservaDia) {
                 switch (reservaDia.estado) {
