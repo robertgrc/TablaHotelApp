@@ -19,6 +19,7 @@ function TablaCalendarioReservas() {
       { id: 12, nombre: '12 DWB', numero: '112' },
       { id: 13, nombre: '13 SWB', numero: '113' },
       { id: 14, nombre: '14 TWB', numero: '114' },
+      { id: 15, nombre: '15 TWB', numero: '115' },
   ];
 
   const reservas = [
@@ -85,6 +86,15 @@ function TablaCalendarioReservas() {
       fechaInicio: '2023-04-28',
       fechaFin: '2023-04-30',
       estado: 'cancelado'
+    },
+    {
+      id: 7,
+      habitacion: '115',
+      nombre: 'Paola',
+      fechaReserva: '2023-04-28', 
+      fechaInicio: '2023-04-14',
+      fechaFin: '2023-04-17',
+      estado: 'alquilado'
     }
   ];
 
