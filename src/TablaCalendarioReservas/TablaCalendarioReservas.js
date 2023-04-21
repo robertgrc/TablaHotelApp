@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TablaEstatus from './TablaEstatus';
 import TablaReservas from './TablaReservas';
 import './TablaReservas.css';
@@ -95,15 +95,49 @@ function TablaCalendarioReservas() {
       fechaInicio: '2023-04-14',
       fechaFin: '2023-04-17',
       estado: 'alquilado'
+    },
+    {
+      id: 8,
+      habitacion: '107',
+      nombre: 'Camila',
+      fechaReserva: '2023-04-28', 
+      fechaInicio: '2023-05-14',
+      fechaFin: '2023-05-17',
+      estado: 'confirmado'
+    },
+    {
+      id: 9,
+      habitacion: '115',
+      nombre: 'Paola',
+      fechaReserva: '2023-04-28', 
+      fechaInicio: '2023-05-18',
+      fechaFin: '2023-05-21',
+      estado: 'alquilado'
     }
   ];
 
-  const fechaActual = new Date();
-  const mesActual = fechaActual.toLocaleString('es-ES', { month: 'long' });
-  const mesActualNumerico = fechaActual.getMonth() + 1;
-  const yearActual = fechaActual.getFullYear();
-  // Obtiene el último día del mes actual
-  const diasDelMes = new Date(fechaActual.getFullYear(), fechaActual.getMonth() + 1, 0).getDate();
+  const [mesActual, setMesActual] = useState(new Date().getMonth() + 1);
+  const [yearActual, setYearActual] = useState(new Date().getFullYear());
+
+  const diasDelMes = new Date(yearActual, mesActual, 0).getDate();
+
+  const incrementarMes = () => {
+    if (mesActual === 12) {
+      setMesActual(1);
+      setYearActual(yearActual + 1);
+    } else {
+      setMesActual(mesActual + 1);
+    }
+  };
+
+  const decrementarMes = () => {
+    if (mesActual === 1) {
+      setMesActual(12);
+      setYearActual(yearActual - 1);
+    } else {
+      setMesActual(mesActual - 1);
+    }
+  };
 
   return (
     <div className="container-calendario-reservas">
@@ -112,18 +146,22 @@ function TablaCalendarioReservas() {
         <div className="subtitle-tabla-registro">
           <h2>Planning de Reservaciones</h2>
           <div className="subtitle-tabla-registro-right">
-            <h2>Mes:{ mesActual } </h2>
-            <h2>Año:{ yearActual} </h2>
+            <h2>Mes:{ new Date(yearActual, mesActual - 1).toLocaleString('es-ES', { month: 'long' }) } </h2>
+            <h2>Año:{ yearActual } </h2>
           </div>
         </div>
         <TablaReservas
           habitaciones={habitaciones}
           diasDelMes={diasDelMes}
-          mesActualNumerico={mesActualNumerico}
+          mesActualNumerico={mesActual}
           yearActual={yearActual}
           reservas={reservas}
         />
-        <TablaEstatus />
+        <div>
+          <TablaEstatus />
+          <button onClick={incrementarMes}>+</button>
+          <button onClick={decrementarMes}>-</button>
+        </div>
       </div>
     </div>
   );
