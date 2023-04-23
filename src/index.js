@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import TablaCalendarioReservas from './TablaCalendarioReservas/TablaCalendarioReservas';
+import TablaCalendarioReservas from './TablaCalendarioReservasModificado/TablaCalendarioReservas';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

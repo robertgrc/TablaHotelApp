@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import './TablaReservas.css';
 
-import Button from '@material-ui/core/Button';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+// import Button from '@material-ui/core/Button';
+// import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+// import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import TablaReservas from './TablaReservas';
 import TablaEstatus from './TablaEstatus';
 
@@ -166,7 +166,7 @@ Mes:
 
             </h2>
           </div>
-          <div className="buttons-table-calendar">
+          {/* <div className="buttons-table-calendar">
             <Button
               variant="contained"
               color="secondary"
@@ -188,7 +188,7 @@ Mes:
 
               siguiente
             </Button>
-          </div>
+          </div> */}
         </div>
         <TablaReservas
           habitaciones={habitaciones}
